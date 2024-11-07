@@ -1,12 +1,16 @@
 package com.es.libreria.controllers
 import com.es.libreria.model.Autor
 import com.es.libreria.services.AutorService
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/autores")
 class AutorController(private val autorService: AutorService) {
+
+    @Autowired
+    private lateinit var autorservice: AutorService
 
     @PostMapping
     fun crearAutor(@RequestBody autor: Autor): ResponseEntity<Autor> {
