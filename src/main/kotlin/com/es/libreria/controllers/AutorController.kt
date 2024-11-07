@@ -1,5 +1,5 @@
 package com.es.libreria.controllers
-import com.es.libreria.model.Autor
+import Autor
 import com.es.libreria.services.AutorService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -24,7 +24,7 @@ class AutorController(private val autorService: AutorService) {
 
     @GetMapping("/{id}")
     fun obtenerAutor(@PathVariable id: Long): ResponseEntity<Autor> {
-        val autor = autorService.obtenerAutorPorId(id)
+        val autor = autorService.obtenerAutor(id)
         return if (autor != null) ResponseEntity.ok(autor) else ResponseEntity.notFound().build()
     }
 

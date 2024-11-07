@@ -1,5 +1,7 @@
 package com.es.libreria.model
 
+import Autor
+import com.fasterxml.jackson.annotation.JsonBackReference
 import jakarta.persistence.*
 
 @Entity
@@ -15,14 +17,14 @@ data class Libro(
     @Column(name = "Genero")
     var genero: String,
 
-    @Column(name = "Año_publicación")
     //@Temporal(TemporalType.DATE)
     var anioPublicacion: Int,
 
     @Column(name = "Precio")
     var precio: Double,
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "autor_id", nullable = false)
+    @JsonBackReference
     var autor: Autor
 )

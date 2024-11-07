@@ -1,11 +1,16 @@
 package com.es.libreria.services
 
-import com.es.libreria.model.Autor
+import Autor
 import com.es.libreria.repository.AutorRepository
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 
 @Service
-class AutorService(private val autorRepository: AutorRepository) {
+class AutorService() {
+
+    @Autowired
+    private lateinit var autorRepository: AutorRepository
 
     fun crearAutor(autor: Autor): Autor {
         return autorRepository.save(autor)
@@ -15,8 +20,8 @@ class AutorService(private val autorRepository: AutorRepository) {
         return autorRepository.findAll()
     }
 
-    fun obtenerAutorPorId(id: Long): Autor? {
-        return autorRepository.findById(id).orElse(null)
+    fun obtenerAutor(id: Long): Autor? {
+        return autorRepository.findByIdOrNull(id)
     }
 
     fun eliminarAutor(id: Long) {
