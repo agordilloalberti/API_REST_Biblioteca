@@ -1,8 +1,6 @@
-package com.es.libreria.Model
+package com.es.libreria.model
 
-import Autor
 import jakarta.persistence.*
-import java.time.LocalDate
 
 @Entity
 @Table(name = "Libros")
@@ -18,11 +16,12 @@ data class Libro(
     var genero: String,
 
     @Column(name = "Año_publicación")
-    @Temporal(TemporalType.DATE)
-    var anioPublicacion: LocalDate,
+    //@Temporal(TemporalType.DATE)
+    var anioPublicacion: Int,
+
+    @Column(name = "Precio")
     var precio: Double,
 
-    @Column(name = "Autor")
     @ManyToOne
     @JoinColumn(name = "autor_id", nullable = false)
     var autor: Autor
