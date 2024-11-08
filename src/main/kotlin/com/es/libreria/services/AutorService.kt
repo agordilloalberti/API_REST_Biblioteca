@@ -1,7 +1,5 @@
-package com.es.libreria.services
 
-import Autor
-import com.es.libreria.repository.AutorRepository
+
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service

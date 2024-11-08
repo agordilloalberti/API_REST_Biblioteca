@@ -1,5 +1,3 @@
-import com.es.libreria.model.Libro
-import com.es.libreria.repository.LibroRepository
 import org.springframework.stereotype.Service
 
 @Service

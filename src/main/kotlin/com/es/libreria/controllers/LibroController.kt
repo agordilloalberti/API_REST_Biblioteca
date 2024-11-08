@@ -1,6 +1,3 @@
-package com.es.libreria.controllers
-import LibroService
-import com.es.libreria.model.Libro
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
